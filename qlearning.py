@@ -11,8 +11,8 @@ class Agente():
         self.env = env #ambiente
 
         #initiates the Q-Table
-        n_states  = 16      #total states - every different cell in the game   
-        n_actions = 4       #total actions - move up, right, left, down
+        n_states  = env.getStateSpaceSize()      #total states - every different cell in the game   
+        n_actions = env.getActionSpaceSize()     #total actions - move up, right, left, down
         self.qTable = np.zeros((n_states, n_actions))
         
     '''
