@@ -5,10 +5,10 @@ import numpy as np
 
 class Agente():
     def __init__(self, env, epsilon=0.01, alpha=0.1, gamma=0.2):
-        self.epsilon = epsilon # exploracao
-        self.alpha = alpha   # taxa de aprendizado
-        self.gamma = gamma   # desconto - determina importancia de acoes futuras
-        self.env = env #ambiente
+        self.epsilon = epsilon 
+        self.alpha = alpha   
+        self.gamma = gamma  
+        self.env = env 
 
         #initiates the Q-Table
         n_states  = env.getStateSpaceSize()      #total states - every different cell in the game   
