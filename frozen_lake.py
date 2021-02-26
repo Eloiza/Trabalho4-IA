@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     env.seed(0)
 
-    agent = Agente(FrozenLakeEnv(env), epsilon=args.epsilon, alpha=args.alpha,
+    agent = Agente(FrozenLakeEnv(env), epsilon=args.epsilon, alpha=0.1,
                                          gamma=args.gamma)
 
     total_episodes = args.train_episodes+args.val_episodes + 1
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
     total_reward = 0
     cmd = None
-
+    
     for i_episode in range(1, total_episodes):
         state = env.reset()
         done = 0
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
 
         while not done:
-            action = agent.escolheAcao(state)
+            action = agent.escolheAcao(state, ucb=False)
 
             last_state = state
             state, reward, done, info = env.step(action)
